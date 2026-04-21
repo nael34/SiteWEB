@@ -7,7 +7,7 @@
     <title>SiteWebFR — Sites Web & IA pour votre Business</title>
     <meta name="description"
         content="Boostez votre business avec un site web premium et une IA qui génère des leads et répond à vos appels. Passez au digital intelligent.">
-    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style.css?v=10.2">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.86/build/spline-viewer.js"></script>
 </head>
 
@@ -15,11 +15,14 @@
     <canvas id="particles-canvas"></canvas>
 
     <!-- ═══ NAVBAR ═══ -->
+
+
     <nav class="navbar" id="navbar">
         <div class="container navbar__inner">
             <a href="index.html" class="navbar__logo">
-                <div class="navbar__logo-icon">N</div>
-                SiteWebFR
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR"
+                    class="navbar__logo-official-img" style="height:42px; width:auto; object-fit:contain;">
+                <span class="text-gradient">SiteWebFR</span>
             </a>
             <div class="navbar__links">
                 <a href="index.html" class="navbar__link active">Accueil</a>
@@ -31,6 +34,12 @@
             <div class="navbar__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
         </div>
         <div class="navbar__mobile">
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem; padding:0.5rem 1rem;">
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" height="45">
+                <span
+                    style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);"><span
+                        class="text-gradient">SiteWebFR</span></span>
+            </div>
             <a href="index.html">Accueil</a>
             <a href="tarifs.html">Tarifs</a>
             <a href="exemples.html">Réalisations</a>
@@ -40,9 +49,11 @@
         </div>
     </nav>
 
+
+
     <!-- ═══ HERO ═══ -->
     <section class="hero" id="hero">
-        <div class="hero__3d fade-in fade-in-delay-2">
+        <div class="hero__3d fade-in-spline">
             <spline-viewer url="https://prod.spline.design/UGyMHHC5NJuv-dM2/scene.splinecode" background="transparent"
                 style="width:100%; height:100%; background: transparent;"></spline-viewer>
         </div>
@@ -133,7 +144,7 @@
                             visiteurs en clients. Design unique qui inspire confiance et professionnalisme.</p>
                     </div>
                     <div style="flex:0 0 200px;">
-                        <img src="assets/images/ai-website.png" alt="Site web IA"
+                        <img src="assets/images/icon-website-3d.png" alt="Site web 3D"
                             style="border-radius:var(--radius-lg); width:100%;">
                     </div>
                 </div>
@@ -169,7 +180,7 @@
                             mail.</p>
                     </div>
                     <div style="flex:0 0 200px;">
-                        <img src="assets/images/ai-leads.png" alt="IA Leads"
+                        <img src="assets/images/icon-ai-3d.png" alt="Icone IA 3D"
                             style="border-radius:var(--radius-lg); width:100%;">
                     </div>
                 </div>
@@ -186,23 +197,22 @@
                         data-count="50" data-suffix="+">0</div>
                     <div style="color:var(--color-text-muted); font-size:0.85rem;">Sites créés</div>
                 </div>
+                <div class="stats-grid__item">
+                    <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
+                        data-count="100" data-suffix="%">0</div>
+                    <div style="color:var(--color-text-muted); font-size:0.85rem;">Clients satisfaits</div>
+                </div>
+                <div class="stats-grid__item">
+                    <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
+                        data-count="10000" data-suffix="+">0</div>
+                    <div style="color:var(--color-text-muted); font-size:0.85rem;">Leads générés</div>
+                </div>
+                <div class="stats-grid__item">
+                    <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
+                        data-count="24" data-suffix="/7">0</div>
+                    <div style="color:var(--color-text-muted); font-size:0.85rem;">IA disponible</div>
+                </div>
             </div>
-            <div class="stats-grid__item">
-                <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
-                    data-count="100" data-suffix="%">0</div>
-                <div style="color:var(--color-text-muted); font-size:0.85rem;">Clients satisfaits</div>
-            </div>
-            <div class="stats-grid__item">
-                <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
-                    data-count="10000" data-suffix="+">0</div>
-                <div style="color:var(--color-text-muted); font-size:0.85rem;">Leads générés</div>
-            </div>
-            <div class="stats-grid__item">
-                <div class="text-gradient" style="font-family:var(--font-heading); font-size:3rem; font-weight:800;"
-                    data-count="24" data-suffix="/7">0</div>
-                <div style="color:var(--color-text-muted); font-size:0.85rem;">IA disponible</div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -285,12 +295,16 @@
     </section>
 
     <!-- ═══ FOOTER ═══ -->
+
+
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div>
                     <div class="footer__logo">
-                        <div class="footer__logo-icon">N</div> SiteWebFR
+                        <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR"
+                            class="footer__logo-official" style="height:40px; width:auto; border-radius:4px;"> <span
+                            class="text-gradient">SiteWebFR</span>
                     </div>
                     <p class="footer__desc">Sites web premium & solutions IA pour propulser votre business dans l'ère du
                         digital intelligent.</p>
@@ -308,7 +322,7 @@
                     <h4 class="footer__heading">Contact</h4>
                     <div class="footer__links">
                         <a href="a-propos.html#contact">Réserver un appel</a>
-                        <a href="mailto:contact@sitewebfr.com">contact@sitewebfr.com</a>
+                        <a href="mailto:nael34.pro@gmail.com">nael34.pro@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -318,7 +332,9 @@
         </div>
     </footer>
 
-    <script src="script.js?v=9.0"></script>
+
+
+    <script src="script.js?v=10.0"></script>
 </body>
 
 </html>

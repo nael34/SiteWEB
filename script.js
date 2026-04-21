@@ -96,9 +96,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeEls = document.querySelectorAll('.fade-in');
     if (fadeEls.length) {
         const obs = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        fadeEls.forEach(el => obs.observe(el));
+            entries.forEach(e => { 
+                if (e.isIntersecting) { 
+                    e.target.classList.add('visible'); 
+                    obs.unobserve(e.target); 
+                } 
+            });
+        }, { threshold: 0.05 }); // Lower threshold for earlier trigger
+
+        fadeEls.forEach(el => {
+            obs.observe(el);
+            // Fallback for elements already in view
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('visible');
+            }
+        });
     }
 
     /* ─── Smooth scroll ─── */
@@ -131,32 +144,103 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ─── Spline 3D: hide watermark & fix background ─── */
     const splineEl = document.querySelector('spline-viewer');
     if (splineEl) {
+        const splineContainer = splineEl.closest('.hero__3d');
+        
         function cleanSpline() {
             const sr = splineEl.shadowRoot;
             if (!sr) return;
-            const old = sr.querySelector('#spline-clean');
-            if (old) old.remove();
-            const style = document.createElement('style');
-            style.id = 'spline-clean';
+            const style = sr.querySelector('#spline-clean') || document.createElement('style');
+            if (!style.id) {
+                style.id = 'spline-clean';
+                sr.appendChild(style);
+            }
             style.textContent = `
                 #logo, [id*="logo"], a[href*="spline"],
                 [class*="logo"], [class*="watermark"],
+                #instruction, [id*="instruction"], [class*="instruction"],
+                #hint, [id*="hint"], [class*="hint"],
+                .spline-watermark, .spline-logo,
                 div[style*="position: absolute"][style*="bottom"],
-                div[style*="position: absolute"][style*="right"]:not(canvas) {
+                div[style*="position: absolute"][style*="right"]:not(canvas),
+                div[style*="pointer-events: none"] + div,
+                #watermark, .watermark {
                     display: none !important;
                     visibility: hidden !important;
                     opacity: 0 !important;
                     pointer-events: none !important;
                     width: 0 !important; height: 0 !important;
-                    overflow: hidden !important;
+                    z-index: -1 !important;
                 }
             `;
-            sr.appendChild(style);
-            // Also try direct removal
-            sr.querySelectorAll('#logo, a[href*="spline"], [id*="logo"]').forEach(el => el.remove());
+            sr.querySelectorAll('#logo, a[href*="spline"], [id*="logo"], #watermark').forEach(el => el.remove());
         }
-        [500, 1500, 3000, 5000, 8000].forEach(t => setTimeout(cleanSpline, t));
-        splineEl.addEventListener('load', () => { setTimeout(cleanSpline, 300); setTimeout(cleanSpline, 1000); });
+
+        // Trigger fade-in only when loaded
+        splineEl.addEventListener('load', () => {
+            cleanSpline();
+            if (splineContainer) splineContainer.classList.add('visible');
+        });
+
+        // Fail-safe: force visibility after 2s if load event was missed
+        setTimeout(() => {
+            if (splineContainer && !splineContainer.classList.contains('visible')) {
+                cleanSpline();
+                splineContainer.classList.add('visible');
+            }
+        }, 2000);
+
+        // Periodic cleaning to ensure it stays hidden
+        [500, 1000, 2000, 5000].forEach(t => setTimeout(cleanSpline, t));
+    }
+
+    /* ─── Contact Form Handling ─── */
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const successMsg = contactForm.querySelector('.form-success');
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="loader"></span> Envoi en cours...';
+
+                try {
+                    const data = {};
+                    new FormData(contactForm).forEach((value, key) => data[key] = value);
+
+                    const response = await fetch('https://formspree.io/f/mreryggr', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        submitBtn.innerHTML = '✓ Message Envoyé';
+                        submitBtn.style.background = 'var(--color-green)';
+                        submitBtn.style.borderColor = 'var(--color-green)';
+                        if (successMsg) {
+                            successMsg.style.display = 'flex';
+                            successMsg.classList.add('fade-in', 'visible');
+                        }
+                        contactForm.reset();
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Formspree Error:', errorData);
+                        throw new Error('Erreur lors de l\'envoi');
+                    }
+                } catch (error) {
+                    console.error('Form Error:', error);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '❌ Erreur, réessayez';
+                    setTimeout(() => { submitBtn.innerHTML = originalText; }, 3000);
+                }
+            }
+        });
     }
 
 });

@@ -5,28 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos & Contact — SiteWebFR</title>
     <meta name="description" content="Rencontrez Nael, le créateur de SiteWebFR. Étudiant en informatique à Montpellier, spécialisé en web design et intelligence artificielle. Réservez un appel gratuit.">
-    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style.css?v=10.2">
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
 
+    
+    
     <nav class="navbar" id="navbar">
         <div class="container navbar__inner">
-            <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">N</div> SiteWebFR</a>
+            <a href="index.html" class="navbar__logo">
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" class="navbar__logo-official-img" style="height:42px; width:auto; object-fit:contain;">
+                <span class="text-gradient">SiteWebFR</span>
+            </a>
             <div class="navbar__links">
                 <a href="index.html" class="navbar__link">Accueil</a>
                 <a href="tarifs.html" class="navbar__link">Tarifs</a>
                 <a href="exemples.html" class="navbar__link">Réalisations</a>
                 <a href="a-propos.html" class="navbar__link active">À propos</a>
             </div>
-            <a href="#contact" class="btn btn--primary navbar__cta">Me contacter</a>
+            <a href="a-propos.html#contact" class="btn btn--primary navbar__cta">Réserver un appel</a>
             <div class="navbar__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
         </div>
         <div class="navbar__mobile">
-            <a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a>
-            <a href="#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">Me contacter</a>
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem; padding:0.5rem 1rem;">
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" height="45">
+                <span style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);"><span class="text-gradient">SiteWebFR</span></span>
+            </div>
+            <a href="index.html">Accueil</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="exemples.html">Réalisations</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="a-propos.html#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">Réserver un appel</a>
         </div>
     </nav>
+
+
 
     <!-- Hero -->
     <section class="section" style="padding-top: 10rem;">
@@ -138,27 +152,27 @@
             </div>
 
             <div style="max-width:650px; margin:0 auto;">
-                <form class="fade-in" onsubmit="event.preventDefault(); this.querySelector('.form-success').style.display='flex'; this.querySelector('button[type=submit]').textContent='✓ Envoyé !';">
+                <form class="fade-in contact-form" action="https://formspree.io/f/mreryggr" method="POST" id="contact-form">
 
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Prénom</label>
-                            <input type="text" required placeholder="Votre prénom" class="form-input">
+                            <input type="text" required name="prenom" placeholder="Votre prénom" class="form-input">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Email</label>
-                            <input type="email" required placeholder="votre@email.com" class="form-input">
+                            <input type="email" required name="email" placeholder="votre@email.com" class="form-input">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Téléphone</label>
-                        <input type="tel" placeholder="06 XX XX XX XX" class="form-input">
+                        <input type="tel" name="telephone" placeholder="06 XX XX XX XX" class="form-input">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Offre qui m'intéresse</label>
-                        <select class="form-input">
+                        <select name="offre" class="form-input">
                             <option>Site Web Premium (500€)</option>
                             <option>IA Business (1 000€)</option>
                             <option>Pack Combo (1 300€)</option>
@@ -168,7 +182,7 @@
 
                     <div class="form-group">
                         <label class="form-label">Décrivez votre projet</label>
-                        <textarea class="form-input" required placeholder="Votre activité, vos besoins, vos objectifs..." rows="5"></textarea>
+                        <textarea name="message" class="form-input" required placeholder="Votre activité, vos besoins, vos objectifs..." rows="5"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn--primary btn--lg btn--full">
@@ -184,16 +198,41 @@
         </div>
     </section>
 
+    
+    
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <div><div class="footer__logo"><div class="footer__logo-icon">N</div> SiteWebFR</div><p class="footer__desc">Sites web premium & solutions IA pour propulser votre business.</p></div>
-                <div><h4 class="footer__heading">Navigation</h4><div class="footer__links"><a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a></div></div>
-                <div><h4 class="footer__heading">Contact</h4><div class="footer__links"><a href="#contact">Réserver un appel</a><a href="mailto:contact@sitewebfr.com">contact@sitewebfr.com</a></div></div>
+                <div>
+                    <div class="footer__logo">
+                        <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" class="footer__logo-official" style="height:40px; width:auto; border-radius:4px;"> <span class="text-gradient">SiteWebFR</span>
+                    </div>
+                    <p class="footer__desc">Sites web premium & solutions IA pour propulser votre business dans l'ère du digital intelligent.</p>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Navigation</h4>
+                    <div class="footer__links">
+                        <a href="index.html">Accueil</a>
+                        <a href="tarifs.html">Tarifs</a>
+                        <a href="exemples.html">Réalisations</a>
+                        <a href="a-propos.html">À propos</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Contact</h4>
+                    <div class="footer__links">
+                        <a href="a-propos.html#contact">Réserver un appel</a>
+                        <a href="mailto:nael34.pro@gmail.com">nael34.pro@gmail.com</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer__bottom"><p>© 2026 SiteWebFR — Conçu avec ❤️ & IA par Nael</p></div>
+            <div class="footer__bottom">
+                <p>© 2026 SiteWebFR — Conçu avec ❤️ & IA par Nael</p>
+            </div>
         </div>
     </footer>
-    <script src="script.js?v=9.0"></script>
+
+
+    <script src="script.js?v=10.0"></script>
 </body>
 </html>
