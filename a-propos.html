@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos & Contact — SiteWebFR</title>
+    <meta name="description" content="Rencontrez Nael, le créateur de SiteWebFR. Étudiant en informatique à Montpellier, spécialisé en web design et intelligence artificielle. Réservez un appel gratuit.">
+    <link rel="stylesheet" href="style.css?v=10.0">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">N</div> SiteWebFR</a>
+            <div class="navbar__links">
+                <a href="index.html" class="navbar__link">Accueil</a>
+                <a href="tarifs.html" class="navbar__link">Tarifs</a>
+                <a href="exemples.html" class="navbar__link">Réalisations</a>
+                <a href="a-propos.html" class="navbar__link active">À propos</a>
+            </div>
+            <a href="#contact" class="btn btn--primary navbar__cta">Me contacter</a>
+            <div class="navbar__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+        </div>
+        <div class="navbar__mobile">
+            <a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a>
+            <a href="#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">Me contacter</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 10rem;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-header__badge">👤 À propos</div>
+                <h1>Le cerveau derrière <span class="text-gradient">SiteWebFR</span></h1>
+                <p>Passionné par le web et l'IA, je crée des solutions digitales qui font la différence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="about-grid fade-in">
+                <div class="about__visual" style="background: linear-gradient(160deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1)); display:flex; align-items:center; justify-content:center; border: 1px solid var(--color-border-light);">
+                    <div style="text-align:center; color:white;">
+                        <div style="font-size:6rem; margin-bottom:1rem;">👨‍💻</div>
+                        <p style="font-family:var(--font-heading); font-size:1.75rem; font-weight:700;">Nael</p>
+                        <p style="color:var(--color-cyan); font-size:0.9rem; font-weight:500;">Web Developer & AI Engineer</p>
+                    </div>
+                </div>
+
+                <div class="about__content">
+                    <h2>Salut, moi c'est <span class="text-gradient">Nael</span> 👋</h2>
+
+                    <p>Je m'appelle Nael, passionné par le web, le digital et l'intelligence artificielle depuis toujours.</p>
+
+                    <p>Actuellement étudiant en informatique à la <strong style="color:var(--color-white);">Faculté des Sciences de Montpellier</strong>,
+                    je me spécialise dans la création de sites web modernes et le développement de solutions IA pour les professionnels.</p>
+
+                    <p>Mon objectif : aider les artisans, les commerçants et les entrepreneurs à <strong style="color:var(--color-cyan);">automatiser leur croissance</strong>
+                    grâce au digital et à l'intelligence artificielle. Un site qui convertit, une IA qui prospecte — le duo gagnant.</p>
+
+                    <p>Je ne crée pas juste des sites. Je construis des <strong style="color:var(--color-white);">machines à clients</strong>.</p>
+
+                    <div class="about__stats">
+                        <div class="about__stat-item">
+                            <div class="about__stat-number text-gradient" data-count="50" data-suffix="+">0</div>
+                            <div class="about__stat-label">Projets livrés</div>
+                        </div>
+                        <div class="about__stat-item">
+                            <div class="about__stat-number text-gradient" data-count="10000" data-suffix="+">0</div>
+                            <div class="about__stat-label">Leads générés</div>
+                        </div>
+                        <div class="about__stat-item">
+                            <div class="about__stat-number text-gradient" data-count="100" data-suffix="%">0</div>
+                            <div class="about__stat-label">Satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="section section--alt grid-bg">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Ma <span class="text-gradient">stack technique</span></h2>
+                <p>Les technologies que j'utilise pour créer vos solutions.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:800px; margin:0 auto;">
+                <div class="card fade-in" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">⚡</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">HTML / CSS / JS</div>
+                </div>
+                <div class="card fade-in fade-in-delay-1" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🐍</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">Python & IA</div>
+                </div>
+                <div class="card fade-in fade-in-delay-2" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🧠</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">Machine Learning</div>
+                </div>
+                <div class="card fade-in fade-in-delay-3" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">📊</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">SEO & Analytics</div>
+                </div>
+                <div class="card fade-in" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🎨</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">UI / UX Design</div>
+                </div>
+                <div class="card fade-in fade-in-delay-1" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🔌</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">APIs & Intégrations</div>
+                </div>
+                <div class="card fade-in fade-in-delay-2" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🤖</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">NLP & Voice AI</div>
+                </div>
+                <div class="card fade-in fade-in-delay-3" style="text-align:center; padding:1.5rem;">
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">🔒</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">Sécurité & Hosting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-header__badge">🚀 Contact</div>
+                <h2>Réservez un <span class="text-gradient">appel gratuit</span></h2>
+                <p>15 minutes. Gratuit. Sans engagement. On parle de votre projet et je vous propose la meilleure solution.</p>
+            </div>
+
+            <div style="max-width:650px; margin:0 auto;">
+                <form class="fade-in" onsubmit="event.preventDefault(); this.querySelector('.form-success').style.display='flex'; this.querySelector('button[type=submit]').textContent='✓ Envoyé !';">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Prénom</label>
+                            <input type="text" required placeholder="Votre prénom" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" required placeholder="votre@email.com" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Téléphone</label>
+                        <input type="tel" placeholder="06 XX XX XX XX" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Offre qui m'intéresse</label>
+                        <select class="form-input">
+                            <option>Site Web Premium (500€)</option>
+                            <option>IA Business (1 000€)</option>
+                            <option>Pack Combo (1 300€)</option>
+                            <option>Je ne sais pas encore</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Décrivez votre projet</label>
+                        <textarea class="form-input" required placeholder="Votre activité, vos besoins, vos objectifs..." rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--lg btn--full">
+                        Envoyer ma demande
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <div class="form-success" style="display:none; margin-top:1.5rem; padding:1.25rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.2); border-radius:var(--radius-lg); align-items:center; gap:0.75rem; color:var(--color-green); font-weight:600;">
+                        <span style="font-size:1.25rem;">✅</span> Merci ! Je reviens vers vous très rapidement.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div><div class="footer__logo"><div class="footer__logo-icon">N</div> SiteWebFR</div><p class="footer__desc">Sites web premium & solutions IA pour propulser votre business.</p></div>
+                <div><h4 class="footer__heading">Navigation</h4><div class="footer__links"><a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a></div></div>
+                <div><h4 class="footer__heading">Contact</h4><div class="footer__links"><a href="#contact">Réserver un appel</a><a href="mailto:contact@sitewebfr.com">contact@sitewebfr.com</a></div></div>
+            </div>
+            <div class="footer__bottom"><p>© 2026 SiteWebFR — Conçu avec ❤️ & IA par Nael</p></div>
+        </div>
+    </footer>
+    <script src="script.js?v=9.0"></script>
+</body>
+</html>

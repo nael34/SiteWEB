@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations — SiteWebFR | Portfolio de sites web & IA</title>
+    <meta name="description" content="Découvrez les sites web premium et solutions IA créés par SiteWebFR. Portfolio de projets pour artisans, restaurants, fitness et coaching.">
+    <link rel="stylesheet" href="style.css?v=10.0">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">N</div> SiteWebFR</a>
+            <div class="navbar__links">
+                <a href="index.html" class="navbar__link">Accueil</a>
+                <a href="tarifs.html" class="navbar__link">Tarifs</a>
+                <a href="exemples.html" class="navbar__link active">Réalisations</a>
+                <a href="a-propos.html" class="navbar__link">À propos</a>
+            </div>
+            <a href="a-propos.html#contact" class="btn btn--primary navbar__cta">Réserver un appel</a>
+            <div class="navbar__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+        </div>
+        <div class="navbar__mobile">
+            <a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a>
+            <a href="a-propos.html#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">Réserver un appel</a>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 10rem;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-header__badge">🖥️ Portfolio</div>
+                <h1>Nos <span class="text-gradient">réalisations</span></h1>
+                <p>Chaque projet est unique. Voici un aperçu de ce que nous pouvons créer ensemble.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Fitness -->
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-card__image-wrapper">
+                        <img src="assets/images/portfolio-fitness.png" alt="Site Forge Fitness" class="portfolio-card__image" width="600" height="375">
+                    </div>
+                    <div class="portfolio-card__body">
+                        <span class="portfolio-card__tag">Site Web Premium</span>
+                        <h3 class="portfolio-card__title">Forge Fitness Studio</h3>
+                        <p class="portfolio-card__desc">Site multi-pages avec système de réservation en ligne, galerie des cours et intégration Instagram. Design dark premium.</p>
+                    </div>
+                </div>
+
+                <!-- Restaurant -->
+                <div class="portfolio-card fade-in fade-in-delay-1">
+                    <div class="portfolio-card__image-wrapper">
+                        <img src="assets/images/portfolio-restaurant.png" alt="Site L'Héritage" class="portfolio-card__image" width="600" height="375">
+                    </div>
+                    <div class="portfolio-card__body">
+                        <span class="portfolio-card__tag">Site Web Premium</span>
+                        <h3 class="portfolio-card__title">L'Héritage — Restaurant</h3>
+                        <p class="portfolio-card__desc">Site élégant avec menu interactif, système de réservation et galerie photo. Design raffiné aux accents dorés.</p>
+                    </div>
+                </div>
+
+                <!-- AI Project -->
+                <div class="portfolio-card fade-in fade-in-delay-2">
+                    <div class="portfolio-card__image-wrapper" style="background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2)); aspect-ratio: 16/10; display:flex; align-items:center; justify-content:center;">
+                        <div style="text-align:center; color:white; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:1rem;">🤖</div>
+                            <h3 style="color:white; font-size:1.3rem;">IA Lead Gen</h3>
+                            <p style="opacity:0.7; font-size:0.85rem; margin-top:0.5rem;">Prospection automatisée</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <span class="portfolio-card__tag">IA Business</span>
+                        <h3 class="portfolio-card__title">IA Prospection — BTP</h3>
+                        <p class="portfolio-card__desc">Système IA de scraping Google Maps pour une entreprise du bâtiment. +500 leads qualifiés générés en 1 mois.</p>
+                    </div>
+                </div>
+
+                <!-- AI Phone -->
+                <div class="portfolio-card fade-in fade-in-delay-3">
+                    <div class="portfolio-card__image-wrapper" style="background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(124,58,237,0.3)); aspect-ratio: 16/10; display:flex; align-items:center; justify-content:center;">
+                        <div style="text-align:center; color:white; padding:2rem;">
+                            <div style="font-size:3.5rem; margin-bottom:1rem;">📞</div>
+                            <h3 style="color:white; font-size:1.3rem;">IA Téléphonique</h3>
+                            <p style="opacity:0.7; font-size:0.85rem; margin-top:0.5rem;">Réponse vocale intelligente</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <span class="portfolio-card__tag">IA Business</span>
+                        <h3 class="portfolio-card__title">IA Accueil — Cabinet Médical</h3>
+                        <p class="portfolio-card__desc">IA vocale qui gère les appels entrants d'un cabinet médical : prise de RDV, informations pratiques, urgences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="section section--alt grid-bg">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-header__badge">⭐ Témoignages</div>
+                <h2>Ce qu'en disent <span class="text-gradient">nos clients</span></h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; max-width:1000px; margin:0 auto;">
+                <div class="card fade-in">
+                    <div style="color:var(--color-cyan); margin-bottom:0.75rem; font-size:1.2rem;">★★★★★</div>
+                    <p class="card__text" style="margin-bottom:1rem;">"Mon site a été livré en 10 jours, avec un design qui a bluffé tous mes clients. Le ROI a été immédiat."</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <div style="width:36px;height:36px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:0.8rem;">M</div>
+                        <div><div style="font-weight:600;font-size:0.85rem;color:var(--color-white);">Marc D.</div><div style="font-size:0.75rem;color:var(--color-text-muted);">Plombier, Montpellier</div></div>
+                    </div>
+                </div>
+                <div class="card fade-in fade-in-delay-1">
+                    <div style="color:var(--color-cyan); margin-bottom:0.75rem; font-size:1.2rem;">★★★★★</div>
+                    <p class="card__text" style="margin-bottom:1rem;">"L'IA téléphonique est un game changer. Je ne rate plus aucun appel et mes clients sont impressionnés."</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg, var(--color-cyan), var(--color-primary));display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:0.8rem;">S</div>
+                        <div><div style="font-weight:600;font-size:0.85rem;color:var(--color-white);">Sophie L.</div><div style="font-size:0.75rem;color:var(--color-text-muted);">Coach sportif, Lyon</div></div>
+                    </div>
+                </div>
+                <div class="card fade-in fade-in-delay-2">
+                    <div style="color:var(--color-cyan); margin-bottom:0.75rem; font-size:1.2rem;">★★★★★</div>
+                    <p class="card__text" style="margin-bottom:1rem;">"En 1 mois, l'IA m'a trouvé plus de leads que 6 mois de prospection manuelle. Incroyable."</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg, var(--color-pink), var(--color-primary));display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:0.8rem;">K</div>
+                        <div><div style="font-weight:600;font-size:0.85rem;color:var(--color-white);">Karim B.</div><div style="font-size:0.75rem;color:var(--color-text-muted);">Électricien, Nîmes</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta fade-in">
+                <h2>Votre projet <span class="text-gradient">mérite le meilleur</span></h2>
+                <p>Discutons de ce que je peux créer pour vous. 15 min, gratuit, sans engagement.</p>
+                <a href="a-propos.html#contact" class="btn btn--primary btn--lg">🚀 Réserver mon appel gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div><div class="footer__logo"><div class="footer__logo-icon">N</div> SiteWebFR</div><p class="footer__desc">Sites web premium & solutions IA pour propulser votre business.</p></div>
+                <div><h4 class="footer__heading">Navigation</h4><div class="footer__links"><a href="index.html">Accueil</a><a href="tarifs.html">Tarifs</a><a href="exemples.html">Réalisations</a><a href="a-propos.html">À propos</a></div></div>
+                <div><h4 class="footer__heading">Contact</h4><div class="footer__links"><a href="a-propos.html#contact">Réserver un appel</a><a href="mailto:contact@sitewebfr.com">contact@sitewebfr.com</a></div></div>
+            </div>
+            <div class="footer__bottom"><p>© 2026 SiteWebFR — Conçu avec ❤️ & IA par Nael</p></div>
+        </div>
+    </footer>
+    <script src="script.js?v=9.0"></script>
+</body>
+</html>
