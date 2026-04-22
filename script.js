@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         resize();
         window.addEventListener('resize', resize);
-        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        // Mouse interactivity disabled for improved fluidity
 
         class Particle {
             constructor() {
@@ -30,11 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.x < 0) this.x = canvas.width;
                 if (this.y > canvas.height) this.y = 0;
                 if (this.y < 0) this.y = canvas.height;
-                if (mouse.x !== null) {
-                    const dx = mouse.x - this.x, dy = mouse.y - this.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) { this.x -= dx * 0.01; this.y -= dy * 0.01; }
-                }
+                // Mouse interactivity removed for fluidity
             }
             draw() {
                 ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;

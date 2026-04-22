@@ -7,7 +7,7 @@
     <title>SiteWebFR — Sites Web & IA pour votre Business</title>
     <meta name="description"
         content="Boostez votre business avec un site web premium et une IA qui génère des leads et répond à vos appels. Passez au digital intelligent.">
-    <link rel="stylesheet" href="style.css?v=10.2">
+    <link rel="stylesheet" href="style.css?v=14.3">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.86/build/spline-viewer.js"></script>
 </head>
 
@@ -35,10 +35,12 @@
         </div>
         <div class="navbar__mobile">
             <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem; padding:0.5rem 1rem;">
-                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" height="45">
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR"
+                    style="height:40px; width:auto; object-fit:contain;">
                 <span
-                    style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);"><span
-                        class="text-gradient">SiteWebFR</span></span>
+                    style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);">
+                    <span class="text-gradient">SiteWebFR</span>
+                </span>
             </div>
             <a href="index.html">Accueil</a>
             <a href="tarifs.html">Tarifs</a>
@@ -73,15 +75,12 @@
                 </p>
 
                 <div class="hero__buttons fade-in fade-in-delay-3">
-                    <a href="tarifs.html" class="btn btn--primary btn--lg">
-                        Découvrir les offres
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                    <a href="#maquette" class="btn btn--primary btn--lg btn--pulse"
+                        style="background: var(--gradient-primary); box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);">
+                        🎁 Maquette gratuite (10 min)
                     </a>
-                    <a href="a-propos.html#contact" class="btn btn--ghost btn--lg">
-                        Réserver un appel gratuit
+                    <a href="tarifs.html" class="btn btn--ghost btn--lg">
+                        Découvrir les offres
                     </a>
                 </div>
             </div>
@@ -136,19 +135,24 @@
 
             <div class="bento">
                 <!-- Big card -->
-                <div class="bento__item bento__item--wide fade-in" style="display:flex; gap:2rem; align-items:center;">
-                    <div style="flex:1;">
+                <div class="bento__item bento__item--wide fade-in">
+                    <div>
                         <div style="font-size:2.5rem; margin-bottom:1rem;">🌐</div>
                         <h3 style="margin-bottom:0.75rem;">Site web premium sur-mesure</h3>
                         <p class="card__text">Un site moderne, rapide, optimisé SEO et conçu pour convertir vos
                             visiteurs en clients. Design unique qui inspire confiance et professionnalisme.</p>
                     </div>
-                    <div style="flex:0 0 200px;">
-                        <img src="assets/images/icon-website-3d.png" alt="Site web 3D"
-                            style="border-radius:var(--radius-lg); width:100%;">
-                    </div>
                 </div>
 
+                <!-- Personnalisation -->
+                <div class="bento__item fade-in fade-in-delay-1">
+                    <div style="font-size:2rem; margin-bottom:1rem;">🎨</div>
+                    <h4 style="margin-bottom:0.5rem;">Personnalisation illimitée</h4>
+                    <p class="card__text">Je modifie votre site autant de fois que nécessaire avant la mise en ligne
+                        pour qu'il soit exactement comme vous l'avez imaginé.</p>
+                </div>
+
+                <!-- IA Téléphonique -->
                 <div class="bento__item fade-in fade-in-delay-1">
                     <div style="font-size:2rem; margin-bottom:1rem;">🤖</div>
                     <h4 style="margin-bottom:0.5rem;">IA Téléphonique</h4>
@@ -156,34 +160,82 @@
                         rendez-vous à votre place.</p>
                 </div>
 
-                <div class="bento__item fade-in fade-in-delay-1">
-                    <div style="font-size:2rem; margin-bottom:1rem;">🔍</div>
-                    <h4 style="margin-bottom:0.5rem;">Web Scraping IA</h4>
-                    <p class="card__text">L'IA scrute le web pour récupérer des leads qualifiés correspondant à votre
-                        cible.</p>
-                </div>
-
-                <div class="bento__item fade-in fade-in-delay-2">
-                    <div style="font-size:2rem; margin-bottom:1rem;">📈</div>
-                    <h4 style="margin-bottom:0.5rem;">Optimisation SEO</h4>
-                    <p class="card__text">Votre site apparaît en tête des résultats Google grâce à une optimisation
-                        poussée.</p>
-                </div>
-
-                <div class="bento__item bento__item--wide fade-in fade-in-delay-2"
-                    style="display:flex; gap:2rem; align-items:center;">
-                    <div style="flex:1;">
+                <!-- Leads -->
+                <div class="bento__item bento__item--wide fade-in fade-in-delay-2">
+                    <div>
                         <div style="font-size:2.5rem; margin-bottom:1rem;">🎯</div>
                         <h3 style="margin-bottom:0.75rem;">Génération de leads automatisée</h3>
                         <p class="card__text">L'IA identifie, contacte et qualifie vos prospects pendant que vous vous
                             concentrez sur votre cœur de métier. Des leads chauds livrés directement dans votre boîte
                             mail.</p>
                     </div>
-                    <div style="flex:0 0 200px;">
-                        <img src="assets/images/icon-ai-3d.png" alt="Icone IA 3D"
-                            style="border-radius:var(--radius-lg); width:100%;">
-                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION MAQUETTE OFFERTE ═══ -->
+    <section class="section section--mockup" id="maquette">
+        <div class="container">
+            <div class="mockup-header fade-in">
+                <div class="section-header__badge">🎁 Offre Spéciale</div>
+                <h2>Votre maquette <span class="text-gradient">offerte en 10 minutes</span></h2>
+                <p>Pas de longs discours, je vous prouve mon savoir-faire en direct. Demandez une débauche visuelle de
+                    votre futur site, gratuitement et sans engagement.</p>
+            </div>
+
+            <div class="mockup-marquee fade-in">
+                <div class="mockup-marquee__inner">
+                    <!-- Original items (10 unique) -->
+                    <div class="mockup-card"><img src="https://i.postimg.cc/FKL2zjPG/26c598fc-7b9e-4452-b52e-dbb841d92e33.png" alt="Maquette 1"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/ydHw2DVJ/32c7835d-4b83-4057-9868-14bf8f472c28.png" alt="Maquette 2"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/hGdHv9Cy/60cceebb-c4ed-4437-82dc-df959d389666.png" alt="Maquette 3"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/fb96yxHp/Capture-d-ecran-2026-02-06-a-21-25-02.png" alt="Maquette 4"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/63xFvyg8/Capture-d-ecran-2026-02-11-a-20-15-58.png" alt="Maquette 5"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/tTG8xYwh/Capture-d-ecran-2026-02-14-a-19-33-42.png" alt="Maquette 6"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/nzKgYnfm/Capture-d-ecran-2026-03-16-a-22-30-05.png" alt="Maquette 7"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/V69pBzPn/Capture-d-ecran-2026-04-03-a-16-06-11.png" alt="Maquette 8"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/FRb8ghXV/Capture-d-ecran-2026-04-22-a-13-52-54.png" alt="Maquette 9"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/DZQHd731/dd06ef97-f9bb-4138-979b-653449a3747b.png" alt="Maquette 10"
+                            class="mockup-card__img" loading="lazy"></div>
+
+                    <!-- Duplicates for seamless loop (10) -->
+                    <div class="mockup-card"><img src="https://i.postimg.cc/FKL2zjPG/26c598fc-7b9e-4452-b52e-dbb841d92e33.png" alt="Maquette 1"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/ydHw2DVJ/32c7835d-4b83-4057-9868-14bf8f472c28.png" alt="Maquette 2"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/hGdHv9Cy/60cceebb-c4ed-4437-82dc-df959d389666.png" alt="Maquette 3"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/fb96yxHp/Capture-d-ecran-2026-02-06-a-21-25-02.png" alt="Maquette 4"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/63xFvyg8/Capture-d-ecran-2026-02-11-a-20-15-58.png" alt="Maquette 5"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/tTG8xYwh/Capture-d-ecran-2026-02-14-a-19-33-42.png" alt="Maquette 6"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/nzKgYnfm/Capture-d-ecran-2026-03-16-a-22-30-05.png" alt="Maquette 7"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/V69pBzPn/Capture-d-ecran-2026-04-03-a-16-06-11.png" alt="Maquette 8"
+                            class="mockup-card__img mockup-card__img--top" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/FRb8ghXV/Capture-d-ecran-2026-04-22-a-13-52-54.png" alt="Maquette 9"
+                            class="mockup-card__img" loading="lazy"></div>
+                    <div class="mockup-card"><img src="https://i.postimg.cc/DZQHd731/dd06ef97-f9bb-4138-979b-653449a3747b.png" alt="Maquette 10"
+                            class="mockup-card__img" loading="lazy"></div>
+                </div>
+            </div>
+
+            <div class="mockup-cta fade-in">
+                <a href="a-propos.html#contact" class="btn btn--primary btn--lg btn--pulse">
+                    🚀 Je veux ma maquette gratuite
+                </a>
             </div>
         </div>
     </section>
@@ -281,14 +333,10 @@
     <section class="section">
         <div class="container">
             <div class="cta fade-in">
-                <h2>Prêt à <span class="text-gradient">automatiser</span> votre croissance ?</h2>
+                <h2>Prêt à <span class="text-gradient">automatiser</span> votre business ?</h2>
                 <p>Réservez un appel gratuit de 15 min. On parle de votre projet, sans engagement.</p>
                 <a href="a-propos.html#contact" class="btn btn--primary btn--lg">
-                    🚀 Réserver mon appel gratuit
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                    🎁 Maquette offerte (10 min)
                 </a>
             </div>
         </div>
@@ -334,7 +382,7 @@
 
 
 
-    <script src="script.js?v=10.0"></script>
+    <script src="script.js?v=10.1"></script>
 </body>
 
 </html>

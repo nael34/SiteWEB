@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos & Contact — SiteWebFR</title>
     <meta name="description" content="Rencontrez Nael, le créateur de SiteWebFR. Étudiant en informatique à Montpellier, spécialisé en web design et intelligence artificielle. Réservez un appel gratuit.">
-    <link rel="stylesheet" href="style.css?v=10.2">
+    <link rel="stylesheet" href="style.css?v=14.3">
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
@@ -29,14 +29,17 @@
         </div>
         <div class="navbar__mobile">
             <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem; padding:0.5rem 1rem;">
-                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" height="45">
-                <span style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);"><span class="text-gradient">SiteWebFR</span></span>
+                <img src="https://i.postimg.cc/g0byRVSn/Untitled-design.png?v=999" alt="Logo SiteWebFR" 
+                    style="height:40px; width:auto; object-fit:contain;">
+                <span style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--color-white);">
+                    <span class="text-gradient">SiteWebFR</span>
+                </span>
             </div>
             <a href="index.html">Accueil</a>
             <a href="tarifs.html">Tarifs</a>
             <a href="exemples.html">Réalisations</a>
             <a href="a-propos.html">À propos</a>
-            <a href="a-propos.html#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">Réserver un appel</a>
+            <a href="a-propos.html#contact" class="btn btn--primary btn--full" style="margin-top:1rem;">🎁 Maquette offerte (10 min)</a>
         </div>
     </nav>
 
@@ -105,7 +108,7 @@
                 <p>Les technologies que j'utilise pour créer vos solutions.</p>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:800px; margin:0 auto;">
+            <div class="stack-grid">
                 <div class="card fade-in" style="text-align:center; padding:1.5rem;">
                     <div style="font-size:2rem; margin-bottom:0.5rem;">⚡</div>
                     <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">HTML / CSS / JS</div>
@@ -135,8 +138,8 @@
                     <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">NLP & Voice AI</div>
                 </div>
                 <div class="card fade-in fade-in-delay-3" style="text-align:center; padding:1.5rem;">
-                    <div style="font-size:2rem; margin-bottom:0.5rem;">🔒</div>
-                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">Sécurité & Hosting</div>
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">💡</div>
+                    <div style="font-size:0.85rem; font-weight:600; color:var(--color-white);">Digital Strategy</div>
                 </div>
             </div>
         </div>
@@ -156,8 +159,8 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">Prénom</label>
-                            <input type="text" required name="prenom" placeholder="Votre prénom" class="form-input">
+                            <label class="form-label">Nom / ENTREPRISE</label>
+                            <input type="text" required name="nom_entreprise" placeholder="Votre nom ou entreprise" class="form-input">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Email</label>
@@ -233,6 +236,6 @@
     </footer>
 
 
-    <script src="script.js?v=10.0"></script>
+    <script src="script.js?v=10.1"></script>
 </body>
 </html>

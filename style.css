@@ -131,6 +131,37 @@ h4 { font-size: 1.25rem; }
 .btn--lg { padding: 1rem 2rem; font-size: 1rem; border-radius: var(--radius-xl); }
 .btn--full { width: 100%; }
 
+/* ─── CTA ATTRACTION ANIMATION ─── */
+.btn--pulse {
+    animation: btn-pulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--pulse::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    animation: btn-shine 4s infinite;
+    pointer-events: none;
+}
+
+@keyframes btn-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+    50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(124, 58, 237, 0.5); }
+}
+
+@keyframes btn-shine {
+    0% { left: -60%; }
+    20% { left: 140%; }
+    100% { left: 140%; }
+}
+
 /* ============================================
    8. HERO
    ============================================ */
@@ -184,6 +215,82 @@ h4 { font-size: 1.25rem; }
 .bento__item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent); }
 .bento__item:hover { border-color: rgba(124, 58, 237, 0.2); box-shadow: var(--shadow-glow); }
 .bento__item img { border-radius: var(--radius-lg); margin-bottom: 1.5rem; }
+
+/* ─── MOCKUP SECTION ─── */
+.section--mockup { padding: 6rem 0; background: rgba(6, 6, 14, 0.4); }
+.mockup-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+.mockup-marquee { overflow: hidden; width: 100vw; position: relative; margin-left: calc(50% - 50vw); margin-bottom: 4rem; mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
+.mockup-marquee__inner { display: flex; gap: 2rem; width: max-content; animation: mockup-scroll 40s linear infinite; padding: 1rem 0; }
+.mockup-card { width: 450px; flex-shrink: 0; background: var(--color-bg-card); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); overflow: hidden; transition: all var(--transition); }
+.mockup-card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--color-primary); box-shadow: var(--shadow-glow); z-index: 10; }
+.mockup-marquee:hover .mockup-marquee__inner { animation-play-state: paused; }
+
+@keyframes mockup-scroll { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+}
+
+.mockup-card__img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; border-bottom: 1px solid var(--color-border-light); }
+.mockup-card__img--top { object-position: top center; }
+.mockup-placeholder { width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(124, 58, 237, 0.05)); display: flex; align-items: center; justify-content: center; position: relative; border: 2px dashed rgba(239, 68, 68, 0.3); border-radius: var(--radius-lg); margin-bottom: 0; }
+.mockup-placeholder::after { content: 'APERCU'; position: absolute; font-family: var(--font-heading); font-weight: 800; font-size: 3rem; color: rgba(239, 68, 68, 0.05); letter-spacing: 0.2em; }
+.mockup-placeholder__label { text-align: center; color: var(--color-text-muted); font-size: 0.85rem; font-weight: 500; z-index: 1; }
+.mockup-placeholder__label span { color: var(--color-cyan); font-weight: 600; font-size: 0.75rem; }
+.mockup-cta { text-align: center; }
+
+@media (max-width: 768px) {
+    .mockup-card { width: 300px; }
+    .mockup-marquee { pointer-events: none; }
+}
+
+/* ─── PROCESS GRID (Tarifs) ─── */
+.process-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.process-step {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 800;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .process-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── STACK GRID (About) ─── */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .stack-grid { grid-template-columns: 1fr; }
+}
+
+
 
 /* ============================================
    12. PRICING
@@ -324,7 +431,11 @@ select.form-input { cursor: pointer; appearance: none; background-image: url("da
     .pricing-grid, .portfolio-grid, .bento { grid-template-columns: 1fr; }
     .hero__buttons { flex-direction: column; }
     .hero__buttons .btn { width: 100%; }
-    .hero__3d { height: 350px; margin-right: 0; }
+    .hero { flex-direction: column; min-height: auto; padding-top: 2rem; text-align: center; }
+    .hero__inner { grid-template-columns: 1fr; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .hero__content { width: 100%; }
+    .hero__3d { width: 100%; display: flex; justify-content: center; position: relative; height: 800px; margin-top: -10rem; margin-bottom: -24rem; order: -1; overflow: visible; }
+    .hero__3d spline-viewer { min-width: 300%; height: 100%; flex-shrink: 0; transform: scale(0.65) translateX(-20px); transform-origin: center; }
     .about__stats { flex-direction: column; gap: 2rem; align-items: flex-start; width: 100%; }
     .stats-grid { grid-template-columns: 1fr; }
     .footer__inner { grid-template-columns: 1fr; }
