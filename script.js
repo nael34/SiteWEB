@@ -239,4 +239,173 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    /* ─── AI Voice Demo Player ─── */
+    const demoAudio = document.getElementById('demoAudio');
+    if (demoAudio) {
+        const playBtn   = document.getElementById('demoPlayBtn');
+        const playIcon  = document.getElementById('demoPlayIcon');
+        const pauseIcon = document.getElementById('demoPauseIcon');
+        const fill      = document.getElementById('demoProgressFill');
+        const handle    = document.getElementById('demoProgressHandle');
+        const bar       = document.getElementById('demoProgressBar');
+        const curTime   = document.getElementById('demoCurrentTime');
+        const durTime   = document.getElementById('demoDuration');
+        const skipBack  = document.getElementById('demoSkipBack');
+        const skipFwd   = document.getElementById('demoSkipFwd');
+        const chapters  = document.querySelectorAll('.ai-demo-chapter');
+        const canvas    = document.getElementById('waveformCanvas');
+        const ctx2      = canvas ? canvas.getContext('2d') : null;
+
+        // Format seconds as m:ss
+        function fmt(s) {
+            s = Math.floor(s);
+            return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+        }
+
+        // Update progress bar + handle + time
+        function updateProgress() {
+            if (!demoAudio.duration) return;
+            const pct = (demoAudio.currentTime / demoAudio.duration) * 100;
+            if (fill)   fill.style.width  = pct + '%';
+            if (handle) handle.style.left = pct + '%';
+            if (curTime) curTime.textContent = fmt(demoAudio.currentTime);
+
+            // Active chapter highlighting
+            chapters.forEach(ch => {
+                const t = parseFloat(ch.dataset.time);
+                ch.classList.remove('active');
+            });
+            let activeChap = null;
+            chapters.forEach(ch => {
+                if (demoAudio.currentTime >= parseFloat(ch.dataset.time)) activeChap = ch;
+            });
+            if (activeChap) activeChap.classList.add('active');
+        }
+
+        // Waveform: static bars (pre-computed, looks like a real waveform)
+        const staticBars = (() => {
+            const n = 80;
+            const arr = [];
+            for (let i = 0; i < n; i++) {
+                // Create a natural-looking waveform shape
+                const base = Math.sin(i * 0.18) * 0.3 + Math.sin(i * 0.07) * 0.4 + 0.25;
+                arr.push(Math.max(0.05, Math.min(1, base + (Math.random() - 0.5) * 0.2)));
+            }
+            return arr;
+        })();
+
+        function drawWaveform() {
+            if (!ctx2 || !canvas) return;
+            const W = canvas.offsetWidth;
+            const H = canvas.offsetHeight;
+            canvas.width  = W;
+            canvas.height = H;
+            ctx2.clearRect(0, 0, W, H);
+
+            const n   = staticBars.length;
+            const gap = 3;
+            const bw  = (W - gap * (n - 1)) / n;
+            const progress = demoAudio.duration ? demoAudio.currentTime / demoAudio.duration : 0;
+
+            staticBars.forEach((amp, i) => {
+                const barH = amp * H * 0.85;
+                const x    = i * (bw + gap);
+                const y    = (H - barH) / 2;
+                const played = i / n < progress;
+
+                // Gradient fill
+                const grad = ctx2.createLinearGradient(0, y, 0, y + barH);
+                if (played) {
+                    grad.addColorStop(0, 'rgba(124, 58, 237, 0.9)');
+                    grad.addColorStop(1, 'rgba(6, 182, 212, 0.9)');
+                } else {
+                    grad.addColorStop(0, 'rgba(255,255,255,0.12)');
+                    grad.addColorStop(1, 'rgba(255,255,255,0.04)');
+                }
+                ctx2.fillStyle = grad;
+                ctx2.beginPath();
+                ctx2.roundRect(x, y, bw, barH, 2);
+                ctx2.fill();
+            });
+        }
+
+        // Animation loop while playing
+        let animRaf;
+        function startAnim() {
+            function loop() { updateProgress(); drawWaveform(); animRaf = requestAnimationFrame(loop); }
+            loop();
+        }
+        function stopAnim() { cancelAnimationFrame(animRaf); }
+
+        // Initial draw
+        demoAudio.addEventListener('loadedmetadata', () => {
+            durTime.textContent = fmt(demoAudio.duration);
+            drawWaveform();
+        });
+
+        // Play / pause
+        playBtn.addEventListener('click', () => {
+            if (demoAudio.paused) {
+                demoAudio.play();
+                playIcon.style.display  = 'none';
+                pauseIcon.style.display = 'block';
+                playBtn.classList.add('playing');
+                startAnim();
+            } else {
+                demoAudio.pause();
+                playIcon.style.display  = 'block';
+                pauseIcon.style.display = 'none';
+                playBtn.classList.remove('playing');
+                stopAnim();
+            }
+        });
+
+        // Ended
+        demoAudio.addEventListener('ended', () => {
+            playIcon.style.display  = 'block';
+            pauseIcon.style.display = 'none';
+            playBtn.classList.remove('playing');
+            stopAnim();
+            updateProgress();
+            drawWaveform();
+        });
+
+        // Skip buttons
+        if (skipBack) skipBack.addEventListener('click', () => { demoAudio.currentTime = Math.max(0, demoAudio.currentTime - 10); updateProgress(); drawWaveform(); });
+        if (skipFwd)  skipFwd.addEventListener('click',  () => { demoAudio.currentTime = Math.min(demoAudio.duration || 0, demoAudio.currentTime + 10); updateProgress(); drawWaveform(); });
+
+        // Progress bar click to seek
+        if (bar) {
+            bar.addEventListener('click', (e) => {
+                const rect = bar.getBoundingClientRect();
+                const pct  = (e.clientX - rect.left) / rect.width;
+                demoAudio.currentTime = pct * (demoAudio.duration || 0);
+                updateProgress();
+                drawWaveform();
+            });
+        }
+
+        // Chapter seek
+        chapters.forEach(ch => {
+            ch.addEventListener('click', () => {
+                demoAudio.currentTime = parseFloat(ch.dataset.time);
+                if (demoAudio.paused) {
+                    demoAudio.play();
+                    playIcon.style.display  = 'none';
+                    pauseIcon.style.display = 'block';
+                    playBtn.classList.add('playing');
+                    startAnim();
+                } else {
+                    updateProgress();
+                    drawWaveform();
+                }
+            });
+        });
+
+        // Redraw on resize
+        window.addEventListener('resize', drawWaveform);
+        drawWaveform();
+    }
+
 });

@@ -309,7 +309,112 @@
         </div>
     </section>
 
-    <!-- ═══ APERÇU TARIFS ═══ -->
+    <!-- ═══ DÉMO IA VOCALE ═══ -->
+    <section class="section section--alt grid-bg" id="demo-ia">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-header__badge">🎙️ Démo En Direct</div>
+                <h2>Écoutez <span class="text-gradient">l'IA en action</span></h2>
+                <p>Une vraie conversation de 1 minute entre moi et mon assistant IA. Jugez par vous-même.</p>
+            </div>
+
+            <div class="ai-demo-player fade-in" style="max-width:780px; margin:0 auto;">
+
+                <!-- Context card -->
+                <div class="ai-demo-context">
+                    <div class="ai-demo-context__icon">⚖️</div>
+                    <div>
+                        <div class="ai-demo-context__label">Mise en situation</div>
+                        <div class="ai-demo-context__text">Simulation d'un appel entrant pour le cabinet d'une avocate.
+                            L'IA répond, qualifie le besoin et propose un rendez-vous — sans intervention humaine.</div>
+                    </div>
+                </div>
+
+                <!-- Waveform + player -->
+                <div class="ai-demo-card">
+                    <!-- Live waveform visualizer -->
+                    <div class="ai-demo-waveform" id="waveformBars">
+                        <canvas id="waveformCanvas" width="700" height="72"></canvas>
+                    </div>
+
+                    <!-- Progress bar -->
+                    <div class="ai-demo-progress" id="demoProgressBar">
+                        <div class="ai-demo-progress__fill" id="demoProgressFill"></div>
+                        <div class="ai-demo-progress__handle" id="demoProgressHandle"></div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="ai-demo-time">
+                        <span id="demoCurrentTime">0:00</span>
+                        <span id="demoDuration">—</span>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="ai-demo-controls">
+                        <button class="ai-demo-btn ai-demo-btn--skip" id="demoSkipBack" title="Reculer 10s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="1 4 1 10 7 10" />
+                                <path d="M3.51 15a9 9 0 1 0 .49-4.67" /><text x="8" y="20" font-size="7"
+                                    fill="currentColor" stroke="none">10</text>
+                            </svg>
+                        </button>
+                        <button class="ai-demo-btn ai-demo-btn--play" id="demoPlayBtn">
+                            <svg id="demoPlayIcon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <svg id="demoPauseIcon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"
+                                style="display:none">
+                                <rect x="6" y="4" width="4" height="16" />
+                                <rect x="14" y="4" width="4" height="16" />
+                            </svg>
+                        </button>
+                        <button class="ai-demo-btn ai-demo-btn--skip" id="demoSkipFwd" title="Avancer 10s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="23 4 23 10 17 10" />
+                                <path d="M20.49 15a9 9 0 1 1-.48-4.67" /><text x="8" y="20" font-size="7"
+                                    fill="currentColor" stroke="none">10</text>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chapter markers -->
+                <div class="ai-demo-chapters">
+                    <div class="ai-demo-chapters__title">⏩ Accès rapide</div>
+                    <div class="ai-demo-chapters__list">
+                        <button class="ai-demo-chapter" data-time="0">
+                            <span class="ai-demo-chapter__time">0:00</span>
+                            <span class="ai-demo-chapter__label">🤖 L'IA décroche et se présente</span>
+                        </button>
+                        <button class="ai-demo-chapter" data-time="8">
+                            <span class="ai-demo-chapter__time">0:08</span>
+                            <span class="ai-demo-chapter__label">🗣️ Qualification du besoin</span>
+                        </button>
+                        <button class="ai-demo-chapter" data-time="18">
+                            <span class="ai-demo-chapter__time">0:18</span>
+                            <span class="ai-demo-chapter__label">📅 Proposition de rendez-vous</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hidden audio element -->
+                <audio id="demoAudio" preload="metadata">
+                    <source src="https://files.catbox.moe/oey3xy.mp3" type="audio/mpeg">
+                </audio>
+
+                <!-- CTA -->
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="a-propos.html#contact" class="btn btn--primary btn--lg btn--pulse">
+                        🚀 Je veux cette IA pour mon cabinet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="section section--alt grid-bg">
         <div class="container">
             <div class="section-header fade-in">
